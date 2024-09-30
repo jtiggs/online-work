@@ -1,0 +1,177 @@
+******************
+
+Git Commands 
+
+******************
+Group Project Procedure for creating and maintaining Branches:
+
+1. Lead:  Create the team repo and add all team members as "Collaborators" using the Settings & Collaborators menus in Git Hub. 
+	Add the starter code, if possible, then git add. , git commit, and git push.
+2. Team Members:  
+	a. Lead:  Create branches for everyone on github.com  OR
+	b. Team:  Create your own branches:
+		1. run a git clone of the team repo to your local machine
+		2. create your own branches locally
+		3. after creating branches, go straight to git push origin <branchname>
+
+3. Team:  Modify your starter code in your branch.  git add . , git commit, git push (NOTE:  You will be supplied an "upstream" code snippet to push to the remote repo:  use it
+4. Team:  When you are ready to merge your branch back into the main remote branch, either you or Lead will open a "Pull 
+	Request" from Github.com remote repo.  Be sure to be on the Main branch.  Pull request will bring into the main YOUR BRANCH, in the drop down menu.
+		Approve, submit, then select "Delete Branch" when finished
+		To delete your local branch:  git checkout main, git merge origin/<yourbranchname>, git remote prune origin
+*****************
+To reset the repo to a PRIOR commit:
+
+1. use git log or 'loggy' below to find the correct commit hash to which you wish to back up the repo
+2. Locally:  git reset --hard <hashcode - 7 digits is ok>
+3. git push origin main --force
+****************
+General Git Commands:
+
+git clone <repo url>  ... If you run git clone -o booyah instead, then you will have booyah/master as your default remote branch.
+
+git add .
+
+git status
+
+git commit -m "reason for commit"
+
+git push
+
+git pull
+
+git reset --hard HEAD (to back up your local repo, to the last commit in the Cloud Repo - Caution, you will loose any changes you made since your last git pull)
+
+git commit -a -m "my commit message"  (this step combines git add . and git commit -m )
+***************************
+
+TO CHECK ON PREVIOUS COMMITS:
+
+NOTE:  q to exit all logs...
+
+git log --oneline (to print brief list of commits and their messages
+
+git log --oneline --all --graph (abbrev commit, msg)  NOTE: create a shortcut called 'loggy' to this with 
+	alias loggy="git log --oneline --all --graph"
+
+git log --pretty=oneline (full commit, msg)
+
+git log --pretty=format:"%h - %an, %ar : %s" (Use the following table for abbreviations of commands in this line)
+
+Specifier	Description of Output
+%H
+
+Commit hash
+
+%h
+
+Abbreviated commit hash
+
+%T
+
+Tree hash
+
+%t
+
+Abbreviated tree hash
+
+%P
+
+Parent hashes
+
+%p
+
+Abbreviated parent hashes
+
+%an
+
+Author name
+
+%ae
+
+Author email
+
+%ad
+
+Author date (format respects the --date=option)
+
+%ar
+
+Author date, relative
+
+%cn
+
+Committer name
+
+%ce
+
+Committer email
+
+%cd
+
+Committer date
+
+%cr
+
+Committer date, relative
+
+%s
+
+Subject
+
+***************************************************
+
+LINKS:
+
+https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History
+
+*****************************************************
+Branch Commands:
+
+git branch ABCXYZ (will create a Branch called "ABCXYZ" from whichever branch is checked out currently
+
+git branch (will show which branch is checked out)
+
+git checkout ABCXYZ (will move HEAD to branch ABCXYZ)
+
+git branch -a  (will show REMOTE and LOCAL branches)
+
+git branch -r (will show only REMOTE branches )
+
+git branch -d <branch name to delete, if already merged into master>
+
+git brach --merged (to see which branches have been merged into the master)
+
+git checkout otherbranch myfile.txt  (to move a file from another branch into the working tree of the destination branch)
+
+******************************************************
+git diff (with no branches specified, then diff will compare changes within this checked-out branch )
+
+git diff <branch-name>..<branch-name> (shows differences between previous copies of working tree files)
+
+git diff --staged (shows diffs b/w STAGED files and COMITTED Files)
+
+*****************************************************
+To reset files back to their prevous state
+
+git reset HEAD <filename> ( to bring back the COMITTED file into the staged area)
+
+git checkout <filename>  ( to bring back the STAGED file into the WORKING TREE)
+
+*******************************************************
+Git commands to view the REMOTE repo:
+
+git remote (see the alias for the remote - usually = origin )
+
+git remote -v  (more verbose rendition of the above but with the full URL)
+
+**************************************************
+
+Creat a Git repo from local:
+
+Creating a remote called "github":
+
+git remote add github git://github.com/jdoe/coolapp.git
+git fetch github
+
+

@@ -1,0 +1,24 @@
+
+
+******
+Steps to preparing data for a Machine Learning Model
+******
+
+1. Acquire the data (.json, .csv, HTML tables to pandas df, webscrapping, API dumps, database like aws-S3,)
+2. Organize the data into a df
+3. Check for nulls (python df.info())
+4. Fix nulls
+5. Check for dups
+6. Fix dups
+7. Merge other datasets into main df
+8. Complete steps 1-6 again
+9. Determine if any columns are categorical
+10. First, consider binning less popular categories in the column
+11. Grab pandas.get_dummies() or Scikitlearn One-Hot_Encoding
+12. Text based columns must be converted using NLP to arrive at columns of words with rows of TF-IDF values
+13. Once all columns are numerical, SCALE all numerical columns
+14. Scale Method:  split data first into test/train, train scaler with train data, then transform (scale) x_train and x_test (the feature sets)
+15. Decide if you want to reduce # of columns through Dimensionality Reduction techniques like PCA (Principal Component Analysis)
+16. Experimentation with Machine Learning algorithms - try without PCA, then with PCA, also try to optimize Hyperparameters
+17. Finalize Hyperparameter tuning (if necessary)
+18. Evaluate ML results and repeat steps 15-18.

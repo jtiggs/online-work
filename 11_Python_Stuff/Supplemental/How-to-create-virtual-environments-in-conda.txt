@@ -1,0 +1,11 @@
+
+************************************************************
+                      Link to Conda
+************************************************************
+
+
+https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
+
+
+--for creating conda Venv's
+

@@ -1,0 +1,13 @@
+******
+NLP Procedures
+******
+
+
+1. Tokenization
+2. Remove Stop Words
+3. Stemming - Not covered
+4. Lemmitization - Not covered
+5. Entity Relationship Identification - Not covered
+6. n-grams - Not covered
+7. POS - Not covered
+8. TF-IDF
